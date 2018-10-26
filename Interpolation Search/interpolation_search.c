@@ -10,7 +10,7 @@ int interpolation_search(long array[], int size, long value)
     {
         if (lower_bound == upper_bound || array[lower_bound] == array[upper_bound])
             return -1;
-
+        // interpolation?
         mid_point = lower_bound + ((upper_bound - lower_bound) / (array[upper_bound] - array[lower_bound])) * (value - array[lower_bound]);
 
         if (array[mid_point] == value)
