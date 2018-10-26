@@ -26,7 +26,7 @@ void selection_sort(long array[], int size)
 
 int main(void)
 {
-    long array[] = {5, 7, 3, 4, 2, 1};
+    long array[] = {5, 7, 3, 4, 2, 1}
 
     selection_sort(array, 6);
 
