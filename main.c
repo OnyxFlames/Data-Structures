@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 #include "Stack/stack.h"
-
+#include "Queue/Queue.h"
 
 //#define STACK_TEST
-
+#define QUEUE_TEST
 
 int main(void)
 {
@@ -13,6 +13,12 @@ int main(void)
     Stack_push(stack, 5);
     printf("%ld\n", Stack_peek(stack));
     Stack_destroy(stack);
+#   endif
+#   ifdef QUEUE_TEST
+    Queue* queue = Queue_create(10);
+    Queue_push(queue, 69);
+    printf("Queue Value: %ld\n", Queue_front(queue));
+    Queue_destroy(queue);
 #   endif
     return 0;
 }
