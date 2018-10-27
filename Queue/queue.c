@@ -15,7 +15,7 @@ Queue* Queue_create(int queue_size)
     }
     queue->queue_size = queue_size;
     // the queue counts down to the 0th index of the array, so it starts at the end
-    queue->queue_head = queue_size;
+    queue->queue_head = queue_size - 1;
     return queue;
 }
 void Queue_destroy(Queue* queue)
@@ -41,7 +41,10 @@ long Queue_front(Queue* queue)
 }
 void Queue_pop(Queue* queue)
 {
-    ++queue->queue_head;
+    if (queue->queue_head == (queue->queue_size - 1))
+        return;
+    else
+        ++queue->queue_head;
 }
 bool Queue_full(Queue* queue)
 {

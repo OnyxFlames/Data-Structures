@@ -17,6 +17,9 @@ int main(void)
 #   ifdef QUEUE_TEST
     Queue* queue = Queue_create(10);
     Queue_push(queue, 69);
+    Queue_push(queue, 420);
+    printf("Queue Value: %ld\n", Queue_front(queue));
+    Queue_pop(queue);
     printf("Queue Value: %ld\n", Queue_front(queue));
     Queue_destroy(queue);
 #   endif
